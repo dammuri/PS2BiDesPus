@@ -39,12 +39,32 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         //Get admin
-                        String adminUsr = snapshot.child("admin").child("username").getValue().toString();
-                        String adminPass = snapshot.child("admin").child("password").getValue().toString();
-                        if(usr.equals(adminUsr) && pwd.equals(adminPass)){
-                            Toast.makeText(LoginActivity.this, "Selamat Datang", Toast.LENGTH_SHORT).show();
-                            startActivity(goHome);
-                            finish();
+                        //String adminUsr = snapshot.child("admin").child("username").getValue().toString();
+                        //String adminPass = snapshot.child("admin").child("password").getValue().toString();
+                        //if(usr.equals(adminUsr) && pwd.equals(adminPass)){
+                        //    Toast.makeText(LoginActivity.this, "Selamat Datang", Toast.LENGTH_SHORT).show();
+                        //    startActivity(goHome);
+                        //    finish();
+                        //}
+                        //else{
+                        //    Toast.makeText(LoginActivity.this, "Username Atau Password Salah", Toast.LENGTH_SHORT).show();
+                        //}
+                        if(snapshot.child(usr).exists()){
+                            if(snapshot.child(usr).child("password").getValue(String.class).equals(pwd)){
+                                if(snapshot.child(usr).child("as").getValue(String.class).equals("admin")){
+                                    userPreference.setDataLogin(LoginActivity.this,true);
+                                    userPreference.setDataAs(LoginActivity.this,"admin");
+                                    startActivity(goHome);
+                                }
+                                else if(snapshot.child(usr).child("as").getValue(String.class).equals("user")){
+                                    userPreference.setDataLogin(LoginActivity.this,true);
+                                    userPreference.setDataAs(LoginActivity.this,"user");
+                                    startActivity(goHome);
+                                }
+                            }
+                            else{
+                                Toast.makeText(LoginActivity.this, "Username Atau Password Salah", Toast.LENGTH_SHORT).show();
+                            }
                         }
                         else{
                             Toast.makeText(LoginActivity.this, "Username Atau Password Salah", Toast.LENGTH_SHORT).show();
@@ -59,5 +79,20 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if(userPreference.getDataLogin(this)){
+            if(userPreference.getDataAs(this).equals("admin")){
+                startActivity(new Intent(LoginActivity.this, Home.class));
+                finish();
+            }
+            else if(userPreference.getDataAs(this).equals("user")){
+                startActivity(new Intent(LoginActivity.this,Home.class));
+                finish();
+            }
+        }
     }
 }
