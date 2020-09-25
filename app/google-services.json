@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "925457791115",
+    "firebase_url": "https://pelayanan-kebidanan.firebaseio.com",
+    "project_id": "pelayanan-kebidanan",
+    "storage_bucket": "pelayanan-kebidanan.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:925457791115:android:9ff77c394d09d5c5b6fc8e",
+        "android_client_info": {
+          "package_name": "com.example.ps2bidespus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "925457791115-q44b4vogtup27f682hu2rvnfhjm898ij.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmA9Xuj7hscDT4TjwfqmWVQaFtTdP2duU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "925457791115-q44b4vogtup27f682hu2rvnfhjm898ij.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
