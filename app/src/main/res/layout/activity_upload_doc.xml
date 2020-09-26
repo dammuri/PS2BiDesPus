@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D58B8B"
+    tools:context=".UploadDoc">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="40dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dashboard"
+                android:layout_gravity="center_horizontal"
+                android:paddingLeft="0dp"
+                android:textAlignment="center"
+                android:textSize="30dp"
+                style="bold"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/foto"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="170dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/doki"/>
+        <TextView
+            android:id="@+id/text"
+            android:layout_below="@+id/foto"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Silahkan Upload Dokument Anda"
+            style="bold"
+            android:shadowColor="#B2000000"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="0.5"
+            android:textSize="20dp"/>
+    <Button
+        android:id="@+id/uploadbtn"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="405dp"
+        android:layout_marginRight="60dp"
+        android:text="Upload"
+        android:textColor="#FF9292"
+        android:textStyle="bold"
+        android:background="@drawable/circleshape"
+        style="@style/Widget.AppCompat.Button"/>
+    
+    <LinearLayout
+        android:id="@+id/upload"
+        android:orientation="vertical"
+        android:layout_below="@+id/text"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/circleshape">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="tap untuk destinasi file" />
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:background="#66AAAAAA"
+            android:layout_marginBottom="100dp"
+            android:layout_alignParentBottom="true">
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/satu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:paddingTop="10dp"
+                    android:id="@+id/kesatu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="*Perhatikan saat ingin mengupload sebuah dokumen pastikan ukuran dokument tidak lebih dari 5MB dan ektensi dari file tersebut merupakan docx. perhatikan juga Koneksi internet supaya tidak terjadi error saat proses uploading"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:textSize="15dp"
+                    android:textAlignment="center"/>
+                 </LinearLayout>
+            </LinearLayout>
+
+</RelativeLayout>
